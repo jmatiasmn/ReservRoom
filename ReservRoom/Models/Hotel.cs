@@ -23,9 +23,9 @@ namespace ReservRoom.Models
         /// </summary>
         /// <param name="username"></param>
         /// <returns></returns>
-        public IEnumerable<Reservation> GetReservationsForUser(string username)
+        public IEnumerable<Reservation> GetAllReservations()
         {
-            return _reservationBook.GetReservationsForUsers(username);
+            return _reservationBook.GetAllReservations();
         }
 
         /// <summary>

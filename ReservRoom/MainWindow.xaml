@@ -5,8 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ReservRoom"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        xmlns:views="clr-namespace:ReservRoom.Views"
+        FontSize="14"
+    Title="MainWindow" Height="450" Width="800">
+    <Grid Margin="20 10" MaxWidth="600">
+        <views:ReservationListingView/>
 
     </Grid>
 </Window>

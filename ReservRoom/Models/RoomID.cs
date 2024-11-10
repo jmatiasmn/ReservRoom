@@ -43,6 +43,6 @@ namespace ReservRoom.Models
         {
             return !(roomId1 == roomId2);
         }
-
+        
     }
 }
