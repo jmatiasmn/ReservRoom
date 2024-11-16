@@ -9,7 +9,7 @@ namespace ReservRoom.Models
         public string Username { get; }
         public DateTime StartTime { get; }
         public DateTime EndTime { get; }
-        public TimeSpan Lenght => EndTime.Subtract(StartTime);
+        public TimeSpan Length => EndTime.Subtract(StartTime);
         public Reservation(RoomID roomID, string username, DateTime startTime, DateTime endTime)
         {
             RoomID = roomID;
