@@ -16,7 +16,6 @@ namespace ReservRoom.Models
             _reservations = new List<Reservation>();
         }
 
-
         public IEnumerable<Reservation> GetAllReservations()
         {
             return _reservations;
@@ -31,6 +30,7 @@ namespace ReservRoom.Models
                     throw new ReservationConflictException(existingReservation, reservation);
                 }
             }
+            _reservations.Add(reservation);
         }
     }
 }

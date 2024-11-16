@@ -17,7 +17,6 @@ namespace ReservRoom.Models
             return $"{FloorNumber}{RoomNumber}";
         }
 
-
         public override bool Equals(object? obj)
         {
             return obj is RoomID roomID &&
@@ -30,19 +29,20 @@ namespace ReservRoom.Models
             return HashCode.Combine(FloorNumber,RoomNumber);
         }
 
-        public static bool operator ==(RoomID roomId1, RoomID roomId2)
+        public static bool operator ==(RoomID roomID1, RoomID roomID2)
         {
-            if (roomId1 is null && roomId2 is null)
+            if (roomID1 is null && roomID2 is null)
             {
                 return true;
             }
-            return !(roomId1 is null) && roomId1.Equals(roomId2);
+
+            return !(roomID1 is null) && roomID1.Equals(roomID2);
         }
 
-        public static bool operator !=(RoomID roomId1, RoomID roomId2)
+        public static bool operator !=(RoomID roomID1, RoomID roomID2)
         {
-            return !(roomId1 == roomId2);
+            return !(roomID1 == roomID2);
         }
-        
+
     }
 }

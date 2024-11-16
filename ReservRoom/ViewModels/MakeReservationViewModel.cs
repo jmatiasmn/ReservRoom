@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ReservRoom.Commands;
+using ReservRoom.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -26,9 +28,9 @@ namespace ReservRoom.ViewModels
         }
 
 
-        private string _floorNumber;
+        private int _floorNumber;
 
-        public string FloorNumber
+        public int FloorNumber
         {
             get { return _floorNumber; }
             set { _floorNumber = value; OnPropertyChanged(); }
@@ -36,7 +38,7 @@ namespace ReservRoom.ViewModels
 
 
 
-        private DateTime _startDate;
+        private DateTime _startDate = new DateTime(2024,1,1);
 
         public DateTime StartDate
         {
@@ -45,7 +47,7 @@ namespace ReservRoom.ViewModels
         }
 
 
-        private DateTime _endDate;
+        private DateTime _endDate = new DateTime(2024, 1, 2);
 
         public DateTime EndDate
         {
@@ -58,9 +60,9 @@ namespace ReservRoom.ViewModels
         public ICommand CancelCommand { get; }
 
 
-        public MakeReservationViewModel()
+        public MakeReservationViewModel(Hotel hotel)
         {
-
+            SubmitCommand = new MakeReservationCommand(this, hotel);
         }
     }
 }
